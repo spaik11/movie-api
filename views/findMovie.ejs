@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Find Movie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form action="/foundmovie" method="GET">
+            <label for="movie">Movie</label><br />
+            <input type="text" name="title" placeholder="title"><br />
+            <button type="submit">Find a Movie</button>
+        </form>
+        <% if (movie !== null) { %>
+        <hr />
+        <h2><%= movie.title %>: </h2>
+        <p>Rating: <%= movie.rating %> </p>
+        <p>Synopsis: <%= movie.synopsis %> </p>
+        <p>Release Year: <%= movie.releaseYear %> </p>
+        <p>Genre: <%= movie.genre.join(', ') %> </p>
+        <p>Director: <%= movie.director %> </p>
+        <p>Box Office: <%= movie.boxOffice/1000000000 %> billion USD </p>
+        <% } %>
+    </body>
+</html>
